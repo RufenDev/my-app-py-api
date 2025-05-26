@@ -1,7 +1,6 @@
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-from env import envs
-from api.routes import router as api_routes
+from api.routes import router as routes_api
+#from fastapi.middleware.cors import CORSMiddleware
 
 API_PREFIX = "/api/v1"
 
@@ -15,4 +14,4 @@ app = FastAPI()
 #     allow_headers=["*"],
 # )
 
-app.include_router(api_routes, prefix=API_PREFIX)
+app.include_router(routes_api, prefix=API_PREFIX)
